@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FearStats — панель управления</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🐱 FearStats Panel</div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="stats">Статистика</button>
+      <button class="tab" data-tab="say">Озвучить</button>
+      <button class="tab owner-only" data-tab="mods" style="display:none">Модераторы</button>
+      <button class="tab owner-only" data-tab="moderation" style="display:none">Модерация</button>
+    </nav>
+    <div class="user" id="userBox"></div>
+  </header>
+
+  <main class="container">
+    <!-- Статистика -->
+    <section class="page active" id="page-stats">
+      <div class="cards" id="statCards"></div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>#</th><th>Модератор</th><th>Должность</th><th>Баны</th><th>Муты</th><th>Всего</th><th>Снято</th><th>Выполнение</th></tr></thead>
+          <tbody id="statsBody"><tr><td colspan="8" class="empty">Загрузка…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Озвучить -->
+    <section class="page" id="page-say">
+      <div class="panel-box">
+        <div class="voice-status" id="voiceStatus">Проверяю…</div>
+        <div class="say-form">
+          <input class="inp" id="sayText" placeholder="Фраза для озвучки (до 190 символов)" maxlength="190">
+          <button class="btn" id="sayBtn">Озвучить</button>
+        </div>
+        <div class="status-line" id="sayStatus"></div>
+      </div>
+      <h3 class="section-title">Последние озвучки</h3>
+      <div class="panel-box" id="sayLog"><div class="empty">Пусто</div></div>
+    </section>
+
+    <!-- Модераторы (владелец) -->
+    <section class="page" id="page-mods">
+      <div class="admin-add">
+        <input class="inp" id="addSteam" placeholder="SteamID64 (7656...)">
+        <input class="inp" id="addName" placeholder="Имя (необязательно)">
+        <button class="btn" id="addBtn">Добавить модератора</button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Имя</th><th>Ранг</th><th>Discord</th><th>SteamID</th><th>Профиль</th><th>Действия</th></tr></thead>
+          <tbody id="modsBody"><tr><td colspan="6" class="empty">Загрузка…</td></tr></tbody>
+        </table>
+      </div>
+      <h3 class="section-title">Нормы рангов</h3>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Ранг</th><th>Должность</th><th>В неделю</th><th>В месяц</th><th></th></tr></thead>
+          <tbody id="ranksBody"><tr><td colspan="5" class="empty">Загрузка…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="status-line" id="modsStatus"></div>
+    </section>
+
+    <!-- Модерация (владелец) -->
+    <section class="page" id="page-moderation">
+      <div class="admin-add">
+        <input class="inp" id="memberSearch" placeholder="Поиск: ник / username / ID">
+        <button class="btn" id="memberSearchBtn">Найти</button>
+      </div>
+      <div class="status-line" id="moderationStatus"></div>
+      <div id="membersList"><div class="empty">Введите запрос или нажмите «Найти» для списка участников</div></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
