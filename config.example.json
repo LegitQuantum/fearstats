@@ -1,0 +1,17 @@
+{
+  "discordToken": "ТОКЕН_БОТА",
+  "discordClientSecret": "CLIENT_SECRET_ИЗ_DEV_PORTAL",
+  "oauthRedirectUri": "https://panel.ВАШ_ДОМЕН/auth/callback",
+  "panelPort": 3000,
+  "panelHost": "0.0.0.0",
+  "panelOwner": "ID_ВЛАДЕЛЬЦА_ПАНЕЛИ",
+  "channelId": "ID_ОСНОВНОГО_КАНАЛА",
+  "requestChannelId": "ID_КАНАЛА_ЗАПРОСОВ",
+  "ownerIds": ["ID_ВЛАДЕЛЬЦА_1", "ID_ВЛАДЕЛЬЦА_2"],
+  "autoApprove": [],
+  "bolotniyUsers": [],
+  "modRanks": ["ID_РОЛИ_ВЫСШАЯ", "ID_РОЛИ", "ID_РОЛИ", "ID_РОЛИ", "ID_РОЛИ_НИЗШАЯ"],
+  "zavUser": "ID_АККАУНТА_ДЛЯ_ZAV",
+  "suspectChannelId": "ID_КАНАЛА_ОПОВЕЩЕНИЙ",
+  "watchUsers": []
+}
